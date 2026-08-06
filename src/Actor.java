@@ -2,12 +2,12 @@ import java.util.Objects;
 
 public class Actor extends Person{
 
-    Double height;
+  private Double height;
 
     public Actor(String name, String surname, Gender gender, double height) {
         this.name = name;
         this.surname = surname;
-        this.gender = gender;
+        setGender(gender);
         this.height = height;
     }
 
@@ -16,7 +16,7 @@ public class Actor extends Person{
         return "Actor{" +
                 "name='" + name + "\'" +
                 ", surname='" + surname + "\'" +
-                ", gender=" + gender +
+                ", gender=" + getGender() +
                 ", height=" + height +
                 "}";
     }
@@ -29,7 +29,7 @@ public class Actor extends Person{
         Actor otherActor = (Actor) obj;
         return Objects.equals(name, otherActor.name) &&
                 Objects.equals(surname, otherActor.surname) &&
-                Objects.equals(gender,otherActor.gender)&&
+                Objects.equals(getGender(),otherActor.getGender())&&
                 (Objects.equals(height, otherActor.height));
     }
 
@@ -48,9 +48,9 @@ public class Actor extends Person{
         }
         hash = hash * 19;
 
-        if (gender != null) {
+        if (getGender() != null) {
 
-            hash = hash + gender.hashCode();
+            hash = hash + getGender().hashCode();
         }
         hash = hash * 13;
 

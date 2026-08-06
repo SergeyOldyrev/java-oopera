@@ -1,7 +1,11 @@
 public class Person {
     String name;
     String surname;
-    Gender gender;
+    private Gender gender;
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
 
     public String getName() {
         return name;

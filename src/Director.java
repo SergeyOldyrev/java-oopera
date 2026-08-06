@@ -1,11 +1,11 @@
 public class Director extends Person {
 
-    int numberOfShows;
+    private int numberOfShows;
 
     public Director(String name, String surname, Gender gender, int numberOfShows) {
         this.name = name;
         this.surname = surname;
-        this.gender = gender;
+        setGender(gender);
         this.numberOfShows = numberOfShows;
     }
 
@@ -19,7 +19,7 @@ System.out.println(this.toString());
         return "Director{" +
                 "name='" + name + "\'" +
                 ", surname='" + surname + "\'" +
-                ", gender=" + gender +
+                ", gender=" + getGender() +
                 ", numberOfShows=" + numberOfShows +
                 "}";
     }
