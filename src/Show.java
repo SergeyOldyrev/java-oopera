@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class Show {
-    String title;
-    String duration;
+    private String title;
+    private String duration;
     private Director director;
     private ArrayList<Actor> listOfActors = new ArrayList<>();
 
@@ -11,7 +11,13 @@ public class Show {
         this.duration = duration;
         this.director = director;
     }
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
     public void addActorToShow(Actor newActor) {
         if (newActor == null) {
             System.out.println("Нельзя добавить пустого актера!");
